@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello World Color Changer</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        gap: 1rem;
+        margin: 0;
+      }
+
+      #helloText {
+        cursor: pointer;
+        font-size: 2rem;
+      }
+
+      button {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="helloText">Hello World</h1>
+    <button id="colorButton" type="button">Change color</button>
+
+    <script>
+      const helloText = document.getElementById('helloText');
+      const colorButton = document.getElementById('colorButton');
+      const colors = ['#e63946', '#1d3557', '#2a9d8f', '#ff006e', '#ff9f1c', '#3a86ff'];
+
+      colorButton.addEventListener('click', () => {
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        helloText.style.color = randomColor;
+      });
+    </script>
+  </body>
+</html>
